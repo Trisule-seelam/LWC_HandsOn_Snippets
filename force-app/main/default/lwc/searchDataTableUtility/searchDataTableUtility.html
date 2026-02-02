@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Search, Filter and Sort Utility" icon-name="standard:search">
+
+        <div class="slds-grid slds-wrap slds-m-around_small">
+            <div class="slds-col slds-size_2-of-4 slds-p-right_small">
+                <lightning-input label="Search" placeholder="Type a word ..." value={searchText}
+                    onchange={handleSearch}></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-4 slds-p-right_small">
+                <lightning-combobox name="filterByCategory" label="Filter by Category" value={selectedCategory}
+                    options={categoryOptions} onchange={handleCategory}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-4">
+                <lightning-combobox name="sortByName" label="Sort by Name" value={sortBy} options={sortOptions}
+                    onchange={handleSort}>
+                </lightning-combobox>
+            </div>
+        </div>
+
+        <div class="slds-m-around_medium">
+            <lightning-datatable key-field="id" data={filteredItems} columns={columns} hide-checkbox-column>
+            </lightning-datatable>
+        </div>
+        
+    </lightning-card>
+</template>
