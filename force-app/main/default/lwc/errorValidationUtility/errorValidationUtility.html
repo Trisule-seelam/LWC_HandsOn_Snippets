@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="User Information Form" icon-name="standard:contact">
+        <div class="slds-p-around_small">
+            <lightning-input label="Name" value={name} onchange={handleInputChange} data-input="name" required></lightning-input>
+            <lightning-input label="Email" type="email" value={email} onchange={handleInputChange} data-input="email" required></lightning-input>
+            <lightning-input label="Phone" type="tel" value={phone} onchange={handleInputChange} data-input="phone"></lightning-input>
+            <lightning-input label="Age" type="number" value={age} onchange={handleInputChange} data-input="age"></lightning-input>
+        </div>
+        <div class="slds-align_absolute-center">
+            <lightning-button label="Submit" variant="brand" onclick={handleSubmit}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
